@@ -1,0 +1,16 @@
+name: k6 Load Test
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+
+jobs:
+  k6:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run k6 test
+        uses: grafana/k6-action@v1
+        with:
+          args: run src/tests/k6_test.js
