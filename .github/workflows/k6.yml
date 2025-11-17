@@ -11,6 +11,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Run k6 test
-        uses: grafana/k6-action@v1
+        uses: grafana/k6-action@v0.3.1
         with:
-          args: run src/tests/k6_test.js
+          filename: src/tests/k6_test.js
